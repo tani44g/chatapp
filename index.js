@@ -9,7 +9,7 @@ var io = require('socket.io').listen(server)
 
 var mongo = require('mongodb').MongoClient;
 
-mongo.connect('mongodb://localhost:27017', function(err, db){
+mongo.connect('mongodb://localhost:27017/', function(err, db){
     if(err)
     {
         throw err;
@@ -83,4 +83,6 @@ mongo.connect('mongodb://localhost:27017', function(err, db){
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/index.html')
 })
+
+
 
